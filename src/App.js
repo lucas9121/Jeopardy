@@ -4,5 +4,24 @@ import GetQuestionBtn from "./components/GetQuestionBtn";
 import { useState, useEffect } from 'react'
 
 export default function App () {
-    return <h1>This is the App page</h1>
+    const [ question, setQuestion ] = useState(null)
+
+    const getQuestion = async () => {
+        try {
+            const response = await fetch('https://jservice.io/api/random')
+            const data = await response.json()
+            setQuestion(data)
+        } catch(e){
+            console.error(e)
+        }
+    }
+
+
+    return(
+        <div className="App">
+            <Header />
+            <GetQuestionBtn />
+        </div>
+
+    )
 }
