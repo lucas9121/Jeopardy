@@ -20,7 +20,7 @@ export default function App () {
     return(
         <div className="App">
             <Header />
-            <GetQuestionBtn />
+            <GetQuestionBtn question={getQuestion} />
         </div>
 
     )
