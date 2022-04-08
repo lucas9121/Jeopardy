@@ -10,17 +10,25 @@ export default function App () {
         try {
             const response = await fetch('https://jservice.io/api/random')
             const data = await response.json()
-            setQuestion(data)
+            setQuestion(data[0].question)
         } catch(e){
             console.error(e)
         }
     }
+    // const getQuestion = () => {
+    //     setQuestion(('This is the question').toUpperCase())
+    // }
+
+    // useEffect(() => {
+    //     getQuestion()
+    // },)
 
 
     return(
         <div className="App">
             <Header />
             <GetQuestionBtn question={getQuestion} />
+            <p>Question: {question}</p>
         </div>
 
     )

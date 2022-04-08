@@ -1,8 +1,8 @@
-export default function getQuestionBtn ({getQuestion}) {
+export default function getQuestionBtn ({question}) {
     return (
         <button className="question-btn"
         onClick={(e) => {
-            getQuestion()
+            question(question)
         }}
         >
             Get Question
