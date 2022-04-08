@@ -4,13 +4,13 @@ import GetQuestionBtn from "./components/GetQuestionBtn";
 import { useState, useEffect } from 'react'
 
 export default function App () {
-    const [ question, setQuestion ] = useState(null)
+    const [ trivia, setTrivia ] = useState("")
 
-    const getQuestion = async () => {
+    const getData = async () => {
         try {
             const response = await fetch('https://jservice.io/api/random')
             const data = await response.json()
-            setQuestion(data[0].question)
+            setTrivia(data[0])
         } catch(e){
             console.error(e)
         }
@@ -27,8 +27,15 @@ export default function App () {
     return(
         <div className="App">
             <Header />
-            <GetQuestionBtn question={getQuestion} />
-            <p>Question: {question}</p>
+            <GetQuestionBtn question={getData} />
+            <div>
+                <p>Question: {trivia.question}</p>
+                <p>Category: {trivia.category.title} </p>
+                <p>Points: {trivia.value} </p>
+            </div>
+            <div>
+                <p>Answer: {trivia.answer} </p>
+            </div>
         </div>
 
     )
