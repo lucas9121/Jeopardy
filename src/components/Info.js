@@ -1,4 +1,4 @@
-export default function Info() {
+export default function Info({trivia}) {
     return(
         <main>
             <div className="info-display">
