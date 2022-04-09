@@ -27,14 +27,34 @@ export default function App () {
     return(
         <div className="App">
             <Header />
-            <GetQuestionBtn question={getData} />
-            <div>
-                <p>Question: {trivia.question}</p>
-                <p>Category: {trivia.category.title} </p>
-                <p>Points: {trivia.value} </p>
+            <div id="score-tracker">
+                <div id="score">
+                    <h2>Score: </h2>
+                    <p>0</p>
+                </div>
+                <div id="buttons">
+                    <button>Decrease</button>
+                    <button>Increase</button>
+                    <button>Reset</button>
+                </div>
             </div>
-            <div>
-                <p>Answer: {trivia.answer} </p>
+            <GetQuestionBtn question={getData} />
+            <div id="info-display">
+                <div className="info-display-div">
+                    <h2> Category: </h2>
+                    <p>{trivia.category.title} </p>
+                </div>
+                <div className="info-display-div">
+                    <h2> Points: </h2>
+                    <p>{trivia.value} </p>
+                </div>
+                <div className="info-display-div">
+                    <h2> Answer: </h2>
+                    <p>{trivia.question}</p>
+                </div>
+            </div>
+            <div id="reveal">
+                <p>Click to Reveal Question: {trivia.answer} </p>
             </div>
         </div>
 
