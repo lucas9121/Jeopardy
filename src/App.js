@@ -35,11 +35,9 @@ export default function App () {
                     <h2 className="h2">Score: <span id="score-number">{scoreNum}</span></h2>
                 </div>
                 <div id="buttons">
-                    <button onClick={(e) => {
-
-                    }}>Decrease</button>
-                    <button>Increase</button>
-                    <button>Reset</button>
+                    <button onClick={(e) => {setScoreNum(scoreNum - trivia.value)}}>Decrease</button>
+                    <button onClick={(e) => {setScoreNum(scoreNum + trivia.value)}}>Increase</button>
+                    <button onClick={(e) => {setScoreNum(0)}}>Reset</button>
                 </div>
             </div>
             <GetQuestionBtn question={getData} />
