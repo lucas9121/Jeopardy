@@ -19,8 +19,6 @@ export default function App () {
             console.error(e)
         }
     }
-    const score = document.getElementById('score-number')
-    const points = document.getElementById('points')
 
     return(
         <div className="App">
