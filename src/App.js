@@ -54,7 +54,8 @@ export default function App () {
                 </div>
             </div>
             <div id="reveal">
-                <p>Click to Reveal Question: {trivia.answer} </p>
+                <button>Click to Reveal Question</button>
+                <p>{trivia.answer}</p>
             </div>
         </div>
 
