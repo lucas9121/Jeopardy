@@ -35,3 +35,9 @@ main h1 {
     color: aliceblue;
     font-weight: bold;
 }
+
+#answer {
+    font-size: larger;
+    color: aliceblue;
+    font-weight: bold;
+}
