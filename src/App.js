@@ -8,6 +8,7 @@ import Answer from "./components/Answer";
 
 export default function App () {
     const [ trivia, setTrivia ] = useState("")
+    const [show, setShow] = useState(false)
 
     const getData = async () => {
         try {
@@ -25,9 +26,9 @@ export default function App () {
         <div className="App">
             <Header />
             <Score trivia={trivia} />
-            <GetQuestionBtn question={getData} />
+            <GetQuestionBtn question={getData} setShow={setShow} />
             <Info trivia={trivia} />
-            <Answer trivia={trivia} />
+            <Answer trivia={trivia} show={show} setShow={setShow} />
         </div>
 
     )
