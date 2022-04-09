@@ -29,7 +29,7 @@ export default function App () {
             <Header />
             <div id="score-tracker">
                 <div id="score">
-                    <h2>Score: </h2>
+                    <h2 className="h2">Score: </h2>
                     <p>0</p>
                 </div>
                 <div id="buttons">
@@ -41,15 +41,15 @@ export default function App () {
             <GetQuestionBtn question={getData} />
             <div id="info-display">
                 <div className="info-display-div">
-                    <h2> Category: </h2>
+                    <h2 className="h2"> Category: </h2>
                     <p>{trivia.category.title} </p>
                 </div>
                 <div className="info-display-div">
-                    <h2> Points: </h2>
+                    <h2 className="h2"> Points: </h2>
                     <p>{trivia.value} </p>
                 </div>
                 <div className="info-display-div">
-                    <h2> Answer: </h2>
+                    <h2 className="h2"> Answer: </h2>
                     <p>{trivia.question}</p>
                 </div>
             </div>
