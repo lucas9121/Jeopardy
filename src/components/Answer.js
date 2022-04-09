@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-export default function Answer({trivia}) {
+export default function Answer({trivia, show, setShow}) {
     const [answer, setAnswer] = useState("")
     return(
-        <main>
-            <button onClick={(e) => {setAnswer(trivia.answer)}}>Click to Reveal Question</button>
+        <main className="info-display">
+            {!show ? 
+            <button id="button-reveal" onClick={(e) => {setAnswer(trivia.answer); setShow(true)}}>Click to Reveal Question</button> :
             <p>{answer}</p>
+            }
         </main>
     )
 }
