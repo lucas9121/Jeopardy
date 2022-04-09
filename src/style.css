@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+}
+.App {
+    background-color: beige;
+    font-family: sans-serif;
+    max-width: 900px;
+    margin: auto;
+}
