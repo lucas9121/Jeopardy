@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 
 export default function App () {
     const [ trivia, setTrivia ] = useState("")
+    const [answer, setAnswer] = useState("")
 
     const getData = async () => {
         try {
@@ -29,8 +30,7 @@ export default function App () {
             <Header />
             <div id="score-tracker">
                 <div id="score">
-                    <h2 className="h2">Score: </h2>
-                    <h2 className="h2">0</h2>
+                    <h2 className="h2">Score: <span id="score-number">0</span></h2>
                 </div>
                 <div id="buttons">
                     <button>Decrease</button>
@@ -42,7 +42,7 @@ export default function App () {
             <div id="info-display">
                 <div className="info-display-div">
                     <h2 className="h2"> Category: </h2>
-                    <p>{trivia.category.title} </p>
+                    <p>{trivia ? trivia.category.title : null} </p>
                 </div>
                 <div className="info-display-div">
                     <h2 className="h2"> Points: </h2>
@@ -54,8 +54,10 @@ export default function App () {
                 </div>
             </div>
             <div id="reveal">
-                <button>Click to Reveal Question</button>
-                <p>{trivia.answer}</p>
+                <button onClick={(e) => {
+                    setAnswer(trivia.answer)
+                }}>Click to Reveal Question</button>
+                <p>{answer}</p>
             </div>
         </div>
 
