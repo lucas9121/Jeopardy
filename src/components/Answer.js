@@ -5,7 +5,7 @@ export default function Answer({trivia, show, setShow}) {
     return(
         <main className="info-display">
             {!show ? 
-            <button id="button-reveal" onClick={(e) => {setAnswer(trivia.answer); setShow(true)}}>Click to Reveal Question</button> :
+            <button style={{backgroundColor: 'naby', color: 'aliceblue'}} id="button-reveal" onClick={(e) => {setAnswer(trivia.answer); setShow(true)}}>Click to Reveal Question</button> :
             <p>{answer}</p>
             }
         </main>
