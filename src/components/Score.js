@@ -1,4 +1,6 @@
-export default function Score() {
+import { useState } from "react"
+export default function Score({trivia}) {
+    const [scoreNum, setScoreNum] = useState(0)
     return(
         <main>
             <div id="score">
