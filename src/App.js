@@ -30,7 +30,7 @@ export default function App () {
     return(
         <div className="App">
             <Header />
-            <div id="score-tracker">
+            <main>
                 <div id="score">
                     <h2 className="h2">Score: <span id="score-number">{scoreNum}</span></h2>
                 </div>
@@ -39,28 +39,26 @@ export default function App () {
                     <button onClick={(e) => {setScoreNum(scoreNum + trivia.value)}}>Increase</button>
                     <button onClick={(e) => {setScoreNum(0)}}>Reset</button>
                 </div>
-            </div>
+            </main>
             <GetQuestionBtn question={getData} />
-            <div id="info-display">
-                <div className="info-display-div">
+            <main>
+                <div className="info-display">
                     <h2 className="h2"> Category: </h2>
                     <p>{trivia ? trivia.category.title : null} </p>
                 </div>
-                <div className="info-display-div">
+                <div className="info-display">
                     <h2 className="h2"> Points: </h2>
                     <p>{trivia.value} </p>
                 </div>
-                <div className="info-display-div">
+                <div className="info-display">
                     <h2 className="h2"> Answer: </h2>
-                    <p id="points">{trivia.question}</p>
+                    <p>{trivia.question}</p>
                 </div>
-            </div>
-            <div id="reveal">
-                <button onClick={(e) => {
-                    setAnswer(trivia.answer)
-                }}>Click to Reveal Question</button>
+            </main>
+            <main>
+                <button onClick={(e) => {setAnswer(trivia.answer)}}>Click to Reveal Question</button>
                 <p>{answer}</p>
-            </div>
+            </main>
         </div>
 
     )
