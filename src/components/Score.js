@@ -7,9 +7,9 @@ export default function Score({trivia}) {
                 <h2 className="h2">Score: <span id="score-number">{scoreNum}</span></h2>
             </div>
             <div id="buttons">
-                <button onClick={(e) => {setScoreNum(scoreNum - trivia.value)}}>Decrease</button>
-                <button onClick={(e) => {setScoreNum(scoreNum + trivia.value)}}>Increase</button>
-                <button onClick={(e) => {setScoreNum(0)}}>Reset</button>
+                <button style={{backgroundColor: 'indianred'}} onClick={(e) => {setScoreNum(scoreNum - trivia.value)}}>Decrease</button>
+                <button style={{backgroundColor: 'darkcyan'}} onClick={(e) => {setScoreNum(scoreNum + trivia.value)}}>Increase</button>
+                <button style={{backgroundColor: 'firebrick'}} onClick={(e) => {setScoreNum(0)}}>Reset</button>
             </div>
         </main>
     )
