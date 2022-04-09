@@ -30,7 +30,7 @@ export default function App () {
             <div id="score-tracker">
                 <div id="score">
                     <h2 className="h2">Score: </h2>
-                    <p>0</p>
+                    <h2 className="h2">0</h2>
                 </div>
                 <div id="buttons">
                     <button>Decrease</button>
