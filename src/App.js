@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from 'react'
 import Header from "./components/Header";
 import GetQuestionBtn from "./components/GetQuestionBtn";
-import { useState, useEffect } from 'react'
+import Score from "./components/Score";
+import Info from "./components/Info";
+import Answer from "./components/Answer";
 
 export default function App () {
     const [ trivia, setTrivia ] = useState("")
-    const [answer, setAnswer] = useState("")
-    const [scoreNum, setScoreNum] = useState(0)
 
     const getData = async () => {
         try {
@@ -17,48 +18,16 @@ export default function App () {
             console.error(e)
         }
     }
-    // const getQuestion = () => {
-    //     setQuestion(('This is the question').toUpperCase())
-    // }
-
-    // useEffect(() => {
-    //     getQuestion()
-    // },)
     const score = document.getElementById('score-number')
     const points = document.getElementById('points')
 
     return(
         <div className="App">
             <Header />
-            <main>
-                <div id="score">
-                    <h2 className="h2">Score: <span id="score-number">{scoreNum}</span></h2>
-                </div>
-                <div id="buttons">
-                    <button onClick={(e) => {setScoreNum(scoreNum - trivia.value)}}>Decrease</button>
-                    <button onClick={(e) => {setScoreNum(scoreNum + trivia.value)}}>Increase</button>
-                    <button onClick={(e) => {setScoreNum(0)}}>Reset</button>
-                </div>
-            </main>
+            <Score trivia={trivia} />
             <GetQuestionBtn question={getData} />
-            <main>
-                <div className="info-display">
-                    <h2 className="h2"> Category: </h2>
-                    <p>{trivia ? trivia.category.title : null} </p>
-                </div>
-                <div className="info-display">
-                    <h2 className="h2"> Points: </h2>
-                    <p>{trivia.value} </p>
-                </div>
-                <div className="info-display">
-                    <h2 className="h2"> Answer: </h2>
-                    <p>{trivia.question}</p>
-                </div>
-            </main>
-            <main>
-                <button onClick={(e) => {setAnswer(trivia.answer)}}>Click to Reveal Question</button>
-                <p>{answer}</p>
-            </main>
+            <Info trivia={trivia} />
+            <Answer trivia={trivia} />
         </div>
 
     )
