@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 export default function App () {
     const [ trivia, setTrivia ] = useState("")
     const [answer, setAnswer] = useState("")
+    const [scoreNum, setScoreNum] = useState(0)
 
     const getData = async () => {
         try {
@@ -23,17 +24,20 @@ export default function App () {
     // useEffect(() => {
     //     getQuestion()
     // },)
-
+    const score = document.getElementById('score-number')
+    const points = document.getElementById('points')
 
     return(
         <div className="App">
             <Header />
             <div id="score-tracker">
                 <div id="score">
-                    <h2 className="h2">Score: <span id="score-number">0</span></h2>
+                    <h2 className="h2">Score: <span id="score-number">{scoreNum}</span></h2>
                 </div>
                 <div id="buttons">
-                    <button>Decrease</button>
+                    <button onClick={(e) => {
+
+                    }}>Decrease</button>
                     <button>Increase</button>
                     <button>Reset</button>
                 </div>
@@ -50,7 +54,7 @@ export default function App () {
                 </div>
                 <div className="info-display-div">
                     <h2 className="h2"> Answer: </h2>
-                    <p>{trivia.question}</p>
+                    <p id="points">{trivia.question}</p>
                 </div>
             </div>
             <div id="reveal">
