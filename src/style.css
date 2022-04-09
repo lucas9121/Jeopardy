@@ -36,8 +36,8 @@ main h1 {
     font-weight: bold;
 }
 
-/* #answer {
+button {
+    padding: 6px;
     font-size: larger;
-    color: aliceblue;
-    font-weight: bold;
-} */
+    margin: 0 1%;
+}
