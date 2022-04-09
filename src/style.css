@@ -1,9 +1,30 @@
 *{
     box-sizing: border-box;
+    background-color: cadetblue;
 }
 .App {
-    background-color: beige;
     font-family: sans-serif;
     max-width: 900px;
     margin: auto;
+    text-align: center;
+}
+
+main h1 {
+    color: aliceblue;
+    font-size: xxx-large;
+}
+
+.h2 {
+    color: gold;
+    font-size: xx-large;
+}
+
+#score-number {
+    color: aliceblue;
+}
+
+.info-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
